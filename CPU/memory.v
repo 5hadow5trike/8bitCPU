@@ -14,7 +14,7 @@ module mem(
     reg[7:0] counter = 8'h00;
     
     initial begin
-        $readmemh("program.mem", memory);    
+        $readmemh("./CPU/program.mem", memory);    
     end
     
     always @(posedge clk) begin
