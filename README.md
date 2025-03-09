@@ -2,7 +2,7 @@
 
 This is a short project of mine, created during semester break. It's a 8bit CPU with a custom instruction set.
 
- **Features**
+ ## Features
 
 - Stack holding 256 Bytes
 - 16 All-purpose Registers
@@ -19,13 +19,22 @@ This is a short project of mine, created during semester break. It's a 8bit CPU 
 
 For more in-depth information on the instruction set, check the documentation folder
 
-**Executing a program**
+## Executing a program
 
 1. Write your assembly code and safe as program.asm in the compiler folder
 2. Run the compiler.py script
 3. Replace the program.mem file in the CPU folder with the one in the compiler folder
 4. Run the simulation using icarus verilog
-    - Execute the command iverilog -o out ./CPU/ctrl_tb.v in the 8BITCPU folder as the working directory
-    - Generate the waveform using vvp out
+    - Execute the following command in the 8BITCPU folder as the working directory 
+    ```
+    iverilog -o out ./CPU/ctrl_tb.v 
+    ```
+    - Generate the waveform using the command
+    ```
+    vvp out
+    ```
 5. View the simulation using gtkwave
-    - Run the command gtkwave wave.vcd to view the generated wave form of the simulation
+    - Run the following command to view the generated wave form of the simulation
+    ```
+    gtkwave wave.vcd
+    ```
