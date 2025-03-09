@@ -1,0 +1,18 @@
+CLK
+Delay:
+#0: 
+-Fetch instr.
+-Update instr. counter(Check for jmp conditions)
+#1:
+-Sets write_enable of reg_bank
+-decides between immediate or reg for command
+-chooses data_in of reg_bank between SET command and ALU command
+#2:
+-Output reg2 and reg3
+-Output current SREG1(probably unnecessary compare #4)
+#3:
+-ALU calculates arithmetic operation
+-Handle flag condition in ALU
+#4:
+-Write result back to reg
+-Write current flag to output
