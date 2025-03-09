@@ -88,7 +88,7 @@ with open("./compiler/program.asm", "r") as f:
             out_line += "b"
             reg = line[1].split(",")
             out_line += hex(int(reg[0]))[2:]
-            if int(reg[1]) <= 15:
+            if int(reg[1]) <= 15 and int(reg[1]) >= 0:
                 out_line += "0"
             out_line += hex((int(reg[1]) + (1 << 8)) % (1 << 8))[2:]
             
@@ -103,6 +103,8 @@ with open("./compiler/program.asm", "r") as f:
         elif line[0] == "PUSHI":
             out_line += "e"
             out_line += "0"
+            if int(line[1]) <= 15 and int(line[1]) >= 0:
+                out_line += "0"
             out_line += hex((int(line[1]) + (1 << 8)) % (1 << 8))[2:]
         elif line[0] == "POP":
             out_line += "f"
